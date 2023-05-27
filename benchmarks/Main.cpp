@@ -28,6 +28,7 @@ void initializeGraphMLIRBfs();
 void initializeGraphMLIRBellmanFord();
 void initializeLemonBellmanFord();
 void initializeBoostBellmanFord();
+void initializeBoostBfs();
 
 void generateResultGraphMLIRFloydWarshall();
 void generateResultFloydWarshall();
@@ -37,6 +38,7 @@ void generateResultGraphMLIRBfs();
 void generateResultGraphMLIRBellmanFord();
 void generateResultLemonBellmanFord();
 void generateResultBoostBellmanFord();
+void generateResultBoostBfs();
 
 int main(int argc, char **argv) {
 
@@ -48,6 +50,7 @@ int main(int argc, char **argv) {
   initializeGraphMLIRBellmanFord();
   initializeLemonBellmanFord();
   initializeBoostBellmanFord();
+  initializeBoostBfs();
 
   ::benchmark::Initialize(&argc, argv);
   ::benchmark::RunSpecifiedBenchmarks();
@@ -60,6 +63,7 @@ int main(int argc, char **argv) {
   generateResultGraphMLIRBellmanFord();
   generateResultLemonBellmanFord();
   generateResultBoostBellmanFord();
+  generateResultBoostBfs();
 
   return 0;
 }

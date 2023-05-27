@@ -44,6 +44,7 @@ add_executable(graph-processing-benchmark
   LemonBellmanFord.cpp
   Main.cpp
   GraphMlirBfs.cpp
+  BoostBfs.cpp
 )
 
 
