@@ -24,7 +24,7 @@
 #include <Utility/Utils.h>
 #include <benchmark/benchmark.h>
 
-#define V 100
+#define V 1000
 #define NUM_EDGE V *(V - 1) / 2
 
 using namespace std;

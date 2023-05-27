@@ -25,7 +25,7 @@
 
 using namespace std;
 
-#define V 100
+#define V 1000
 
 namespace {
 int input[V][V];
@@ -55,7 +55,7 @@ void initializeFloydWarshall() {
 
   for (int i = 0; i < V; i++) {
     for (int j = 0; j < V; j++) {
-      input[i][j] = 100;
+      input[i][j] = rand() % 100;
     }
   }
   memset(output, 0, sizeof(output));
@@ -80,11 +80,11 @@ void generateResultFloydWarshall() {
 
   floydWarshall(input, output);
 
-  for (int i = 0; i < V; i++) {
-    for (int j = 0; j < V; j++) {
-      cout << output[i][j] << " ";
-    }
-    cout << "\n";
-  }
+  // for (int i = 0; i < V; i++) {
+  //   for (int j = 0; j < V; j++) {
+  //     cout << output[i][j] << " ";
+  //   }
+  //   cout << "\n";
+  // }
   cout << "FLoyd Warshall operation finished!\n";
 }

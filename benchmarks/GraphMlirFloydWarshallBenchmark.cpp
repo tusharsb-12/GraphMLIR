@@ -26,9 +26,11 @@
 
 using namespace std;
 
+#define V 1000
+
 namespace {
 Graph<float, 2> sample_graph(graph::detail::GRAPH_ADJ_MATRIX_UNDIRECTED_WEIGHTED,
-                           100);
+                           V);
 intptr_t size[2];
 MemRef<float, 2> *input;
 } // namespace
@@ -45,8 +47,8 @@ void initializeGraphMLIRFloydWarshall() {
 
   input = &sample_graph.get_Memref();
 
-  size[0] = 100;
-  size[1] = 100;
+  size[0] = V;
+  size[1] = V;
 
   MemRef<float, 2> output = MemRef<float, 2>(size);
 }

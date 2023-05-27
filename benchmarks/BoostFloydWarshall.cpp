@@ -29,6 +29,8 @@
 
 using namespace std;
 
+#define V 1000
+
 namespace {
 typedef int t_weight;
 
@@ -50,7 +52,7 @@ Graph g;
 
 void initializeBoostFLoydWarshall() {
 
-  const int vertices = 100;
+  const int vertices = V;
   int num_edges = vertices * (vertices -1) / 2;
 
   // define edges

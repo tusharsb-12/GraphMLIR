@@ -36,7 +36,7 @@ using namespace vector;
 using namespace mlir::arith;
 
 // Size for visited and queue vector
-#define MAXSIZE 1000
+#define MAXSIZE 2000
 
 // Cast index to i32
 Value indexToI32(OpBuilder &builder, Location loc, Value v) {
