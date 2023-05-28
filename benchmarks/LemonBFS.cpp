@@ -26,31 +26,72 @@
 using namespace std;
 using namespace lemon;
 
-#define V 1000
+#define V 2000
+#define MaxWeight 900
+#define UpperLimit 100
+#define LowerLimit 2
+
+typedef ListDigraph::ArcMap<int> LengthMap;
 
 namespace {
 ListDigraph g;
 ListDigraph::Node source;
+LengthMap length(g);
+ListDigraph::Node nodes[V];
 } // namespace
 
 void initializeLemonBFS() {
-  ListDigraph::Node nodes[V];
+  // ListDigraph::Node nodes[V];
 
-  for (int i = 0; i < V; i++)
+  // for (int i = 0; i < V; i++)
+  //   nodes[i] = g.addNode();
+
+  // source = nodes[0];
+
+  // int vertices = V;
+  // int NUM = vertices;
+  // int MAX_EDGES = vertices * (vertices - 1) / 2;
+  // int NUMEDGE = MAX_EDGES;
+
+  // for (int i = 1; i <= NUMEDGE; i++) {
+  //   ListDigraph::Node a = nodes[rand() % V];
+  //   ListDigraph::Node b = nodes[rand() % V];
+
+  //   g.addArc(a, b);
+  // }
+
+  // Bfs<ListDigraph> bfs(g);
+
+  for (int i = 0; i < V; i++) {
     nodes[i] = g.addNode();
+  }
 
   source = nodes[0];
 
-  int vertices = V;
-  int NUM = vertices;
-  int MAX_EDGES = vertices * (vertices - 1) / 2;
+  std::set<std::pair<int, int>> container;
+  std::set<std::pair<int, int>>::iterator it;
+  srand(time(NULL));
+
+  int NUM = V;
+  int MAX_EDGES = V * (V - 1) / 2;
   int NUMEDGE = MAX_EDGES;
 
-  for (int i = 1; i <= NUMEDGE; i++) {
-    ListDigraph::Node a = nodes[rand() % V];
-    ListDigraph::Node b = nodes[rand() % V];
+  for (int j = 1; j <= NUMEDGE; j++) {
+    int a = rand() % NUM;
+    int b = rand() % NUM;
+    std::pair<int, int> p = std::make_pair(a, b);
+    std::pair<int, int> reverse_p = std::make_pair(b, a);
 
-    g.addArc(a, b);
+    while (container.find(p) != container.end() ||
+           container.find(reverse_p) != container.end()) {
+      a = rand() % NUM;
+      b = rand() % NUM;
+      p = std::make_pair(a, b);
+      reverse_p = std::make_pair(b, a);
+    }
+
+    container.insert(p);
+    length[g.addArc(nodes[a], nodes[b])] = 1 + rand() % MaxWeight;
   }
 
   Bfs<ListDigraph> bfs(g);

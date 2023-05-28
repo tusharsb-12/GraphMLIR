@@ -6,7 +6,7 @@
 using namespace std;
 using namespace lemon;
 
-#define V 1000
+#define V 2000
 #define MaxWeight 900
 #define UpperLimit 100
 #define LowerLimit 2

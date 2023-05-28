@@ -30,7 +30,7 @@
 
 using namespace std;
 
-#define SIZE 1000
+#define SIZE 2000
 
 namespace {
 typedef int t_weight;

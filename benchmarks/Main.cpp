@@ -20,50 +20,50 @@
 
 #include <benchmark/benchmark.h>
 
+void initializeBoostBfs();
+void initializeLemonBFS();
+void initializeGraphMLIRBfs();
 void initializeGraphMLIRFloydWarshall();
 void initializeFloydWarshall();
-void initializeLemonBFS();
 void initializeBoostFLoydWarshall();
-void initializeGraphMLIRBfs();
 void initializeGraphMLIRBellmanFord();
 void initializeLemonBellmanFord();
 void initializeBoostBellmanFord();
-void initializeBoostBfs();
 
+void generateResultBoostBfs();
+void generateResultLemonBFS();
+void generateResultGraphMLIRBfs();
 void generateResultGraphMLIRFloydWarshall();
 void generateResultFloydWarshall();
-void generateResultLemonBFS();
 void generateResultBoostFLoydWarshall();
-void generateResultGraphMLIRBfs();
 void generateResultGraphMLIRBellmanFord();
 void generateResultLemonBellmanFord();
 void generateResultBoostBellmanFord();
-void generateResultBoostBfs();
 
 int main(int argc, char **argv) {
 
+  initializeBoostBfs();
+  initializeLemonBFS();
+  initializeGraphMLIRBfs();
   initializeGraphMLIRFloydWarshall();
   initializeFloydWarshall();
-  initializeLemonBFS();
   initializeBoostFLoydWarshall();
-  initializeGraphMLIRBfs();
   initializeGraphMLIRBellmanFord();
   initializeLemonBellmanFord();
   initializeBoostBellmanFord();
-  initializeBoostBfs();
 
   ::benchmark::Initialize(&argc, argv);
   ::benchmark::RunSpecifiedBenchmarks();
 
+  generateResultBoostBfs();
+  generateResultLemonBFS();
+  generateResultGraphMLIRBfs();
   generateResultGraphMLIRFloydWarshall();
   generateResultFloydWarshall();
-  generateResultLemonBFS();
   generateResultBoostFLoydWarshall();
-  generateResultGraphMLIRBfs();
   generateResultGraphMLIRBellmanFord();
   generateResultLemonBellmanFord();
   generateResultBoostBellmanFord();
-  generateResultBoostBfs();
 
   return 0;
 }

@@ -31,7 +31,7 @@
 
 using namespace std;
 
-#define SIZE 1000
+#define SIZE 2000
 
 namespace {
 // define the graph type
@@ -110,7 +110,7 @@ static void Boost_Bfs(benchmark::State &state) {
 }
 
 // Register benchmarking function.
-// BENCHMARK(Boost_Bfs)->Arg(1);
+BENCHMARK(Boost_Bfs)->Arg(1);
 
 void generateResultBoostBfs() {
   initializeBoostBfs();

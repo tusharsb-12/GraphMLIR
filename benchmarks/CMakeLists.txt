@@ -35,16 +35,16 @@ PROPERTIES
 LINKER_LANGUAGE C)
 
 add_executable(graph-processing-benchmark
+  BoostBfs.cpp
+  LemonBFS.cpp
+  GraphMlirBfs.cpp
   FloydWarshall.cpp
   BoostFloydWarshall.cpp
-  BoostBellmanFordBenchmarking.cpp
   GraphMlirFloydWarshallBenchmark.cpp
-  GraphMlirBellmanFordBenchmark.cpp
-  LemonBFS.cpp
   LemonBellmanFord.cpp
+  BoostBellmanFordBenchmarking.cpp
+  GraphMlirBellmanFordBenchmark.cpp
   Main.cpp
-  GraphMlirBfs.cpp
-  BoostBfs.cpp
 )
 
 

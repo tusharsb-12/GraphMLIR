@@ -26,7 +26,7 @@
 
 using namespace std;
 
-#define V 1000
+#define V 2000
 
 namespace {
 Graph<float, 2> sample_graph(graph::detail::GRAPH_ADJ_MATRIX_UNDIRECTED_WEIGHTED,
